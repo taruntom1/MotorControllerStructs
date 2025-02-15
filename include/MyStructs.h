@@ -8,7 +8,8 @@
 #define MYSTRUCTS_H
 
 #include <stdint.h>
-/** 
+
+/**
  * @defgroup Structs
  * @brief Structs for storing different properties and setpoints of the controllers
  * @{
@@ -22,7 +23,7 @@ struct OdoBroadcastStatus
 {
     bool angleBroadcast = false; ///< Indicates if angle data is being broadcast.
     bool speedBroadcast = false; ///< Indicates if speed data is being broadcast.
-    bool pwmBroadcast = false; ///< Indicates if PWM data is being broadcast.
+    bool pwmBroadcast = false;   ///< Indicates if PWM data is being broadcast.
 };
 
 /**
@@ -52,9 +53,10 @@ struct PWMLimits
  */
 struct MotorConnections
 {
-    uint8_t dirPin = 0; ///< Direction pin.
-    uint8_t pwmPin = 0; ///< PWM pin.
-    uint8_t encPin = 0; ///< Encoder pin.
+    uint8_t dirPin;  ///< Direction pin.
+    uint8_t pwmPin;  ///< PWM pin.
+    uint8_t encPinA; ///< Encoder pin A.
+    uint8_t encPinB; ///< Encoder pin B.
 };
 
 /**
@@ -64,7 +66,7 @@ struct MotorConnections
 struct OdometryData
 {
     float angle = 0; ///< Current angle in degrees.
-    float rpm = 0; ///< Current speed in RPM.
+    float rpm = 0;   ///< Current speed in RPM.
 };
 
 /**
@@ -74,7 +76,7 @@ struct OdometryData
 struct Setpoint
 {
     float angle = 0; ///< Desired angle in degrees.
-    float rpm = 0; ///< Desired speed in RPM.
+    float rpm = 0;   ///< Desired speed in RPM.
 };
 
 /**
@@ -83,14 +85,14 @@ struct Setpoint
  */
 struct MotorData
 {
-    uint8_t motorID = 0; ///< Unique identifier for the motor.
-    PIDConstants anglePIDConstants; ///< PID constants for angle control.
-    PIDConstants speedPIDConstants; ///< PID constants for speed control.
-    PWMLimits pwmLimits; ///< PWM limits.
+    uint8_t motorID = 0;               ///< Unique identifier for the motor.
+    PIDConstants anglePIDConstants;    ///< PID constants for angle control.
+    PIDConstants speedPIDConstants;    ///< PID constants for speed control.
+    PWMLimits pwmLimits;               ///< PWM limits.
     MotorConnections motorConnections; ///< Hardware connections.
-    OdometryData odometryData; ///< Odometry data.
-    Setpoint setpoint; ///< Desired setpoints.
-    uint16_t pwmValue = 0; ///< Current PWM value.
+    OdometryData odometryData;         ///< Odometry data.
+    Setpoint setpoint;                 ///< Desired setpoints.
+    uint16_t pwmValue = 0;             ///< Current PWM value.
 };
 
 /**
@@ -99,10 +101,10 @@ struct MotorData
  */
 struct ControllerProperties
 {
-    bool run = false; ///< Indicates if the controller is active.
-    uint8_t numMotors = 2; ///< Number of motors controlled.
-    uint16_t anglePIDFrequency = 30; ///< Frequency for angle PID updates (Hz).
-    uint16_t speedPIDFrequency = 30; ///< Frequency for speed PID updates (Hz).
+    bool run = false;                      ///< Indicates if the controller is active.
+    uint8_t numMotors = 2;                 ///< Number of motors controlled.
+    uint16_t anglePIDFrequency = 30;       ///< Frequency for angle PID updates (Hz).
+    uint16_t speedPIDFrequency = 30;       ///< Frequency for speed PID updates (Hz).
     OdoBroadcastStatus odoBroadcastStatus; ///< Status of odometry broadcasting.
 };
 
@@ -112,7 +114,7 @@ struct ControllerProperties
  */
 struct ControllerData
 {
-    MotorData *motorData = nullptr; ///< Pointer to an array of MotorData structures.
+    MotorData *motorData = nullptr;            ///< Pointer to an array of MotorData structures.
     ControllerProperties controllerProperties; ///< Properties of the controller.
 };
 
