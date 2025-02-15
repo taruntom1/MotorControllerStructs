@@ -1,0 +1,14 @@
+{
+    "name": "MotorControllerStructs",
+    "version": "1.0.0",
+    "description": "collection of structs for motor controller",
+    "authors": [
+      {
+        "name": "Tarun Tom",
+        "email": "taruntom1@gmail.com",
+        "maintainer": true
+      }
+    ],
+    "license": "MIT"
+  }
+  
