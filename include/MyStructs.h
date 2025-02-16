@@ -136,14 +136,14 @@ struct ControllerData
     ControllerProperties controllerProperties; ///< Properties of the controller.
 };
 
-struct TaskHandles
-{
-    WheelTaskHandles *wheel_task_handles;
-};
-
 struct WheelTaskHandles
 {
     TaskHandle_t wheel_run_task_handle;
+};
+
+struct TaskHandles
+{
+    WheelTaskHandles *wheel_task_handles;
 };
 
 
