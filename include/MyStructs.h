@@ -135,7 +135,7 @@ struct ControllerData
 
 struct TaskHandles
 {
-    TaskHandle_t* wheel_run_task_handles
+    TaskHandle_t* wheel_run_task_handles;
 };
 
 /** @} */
