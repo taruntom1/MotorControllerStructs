@@ -138,7 +138,7 @@ struct ControllerData
 
 struct TaskHandles
 {
-    WheelTaskHandles* wheel_task_handles;
+    WheelTaskHandles wheel_task_handles;
 };
 
 struct WheelTaskHandles

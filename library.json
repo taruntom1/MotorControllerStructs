@@ -1,6 +1,6 @@
 {
     "name": "MotorControllerStructs",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "collection of structs for motor controller",
     "authors": [
       {
