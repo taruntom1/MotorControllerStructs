@@ -80,19 +80,31 @@ struct Setpoint
 };
 
 /**
+ * @brief ControlMode enum
+ * @brief Enumerates different control modes for motor operation.
+ */
+enum ControlMode
+{
+    POSITION_CONTROL,  ///< Position control mode.
+    SPEED_CONTROL,     ///< Speed control mode.
+    PWM_DIRECT_CONTROL ///< Direct PWM control mode.
+};
+
+/**
  * @struct MotorData
  * @brief Encapsulates all data related to a motor.
  */
 struct MotorData
 {
-    uint8_t motorID = 0;               ///< Unique identifier for the motor.
-    PIDConstants anglePIDConstants;    ///< PID constants for angle control.
-    PIDConstants speedPIDConstants;    ///< PID constants for speed control.
-    PWMLimits pwmLimits;               ///< PWM limits.
-    MotorConnections motorConnections; ///< Hardware connections.
-    OdometryData odometryData;         ///< Odometry data.
-    Setpoint setpoint;                 ///< Desired setpoints.
-    uint16_t pwmValue = 0;             ///< Current PWM value.
+    uint8_t motorID = 0;                          ///< Unique identifier for the motor.
+    ControlMode controlMode = PWM_DIRECT_CONTROL; ///< Control mode for the motor.
+    PIDConstants anglePIDConstants;               ///< PID constants for angle control.
+    PIDConstants speedPIDConstants;               ///< PID constants for speed control.
+    PWMLimits pwmLimits;                          ///< PWM limits.
+    MotorConnections motorConnections;            ///< Hardware connections.
+    OdometryData odometryData;                    ///< Odometry data.
+    Setpoint setpoint;                            ///< Desired setpoints.
+    uint16_t pwmValue = 0;                        ///< Current PWM value.
 };
 
 /**
