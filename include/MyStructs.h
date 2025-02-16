@@ -9,6 +9,9 @@
 
 #include <stdint.h>
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
 /**
  * @defgroup Structs
  * @brief Structs for storing different properties and setpoints of the controllers
@@ -128,6 +131,11 @@ struct ControllerData
 {
     MotorData *motorData = nullptr;            ///< Pointer to an array of MotorData structures.
     ControllerProperties controllerProperties; ///< Properties of the controller.
+};
+
+struct TaskHandles
+{
+    TaskHandle_t* wheel_run_task_handles
 };
 
 /** @} */
