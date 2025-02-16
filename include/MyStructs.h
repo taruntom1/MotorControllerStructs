@@ -110,6 +110,7 @@ struct MotorData
     OdometryData odometryData;                    ///< Odometry data.
     Setpoint setpoint;                            ///< Desired setpoints.
     uint16_t pwmValue = 0;                        ///< Current PWM value.
+    uint8_t pwmUpdateFrequency = 50;              ///< PWM update frequency (Hz).
 };
 
 /**
