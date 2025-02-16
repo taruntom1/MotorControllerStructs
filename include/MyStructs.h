@@ -88,9 +88,11 @@ struct Setpoint
  */
 enum ControlMode
 {
-    POSITION_CONTROL,  ///< Position control mode.
-    SPEED_CONTROL,     ///< Speed control mode.
-    PWM_DIRECT_CONTROL ///< Direct PWM control mode.
+    POSITION_CONTROL,   ///< Position control mode.
+    SPEED_CONTROL,      ///< Speed control mode.
+    PWM_DIRECT_CONTROL, ///< Direct PWM control mode.
+    OFF                 ///< Off
+
 };
 
 /**
@@ -135,7 +137,7 @@ struct ControllerData
 
 struct TaskHandles
 {
-    TaskHandle_t* wheel_run_task_handles;
+    TaskHandle_t *wheel_run_task_handles;
 };
 
 /** @} */
