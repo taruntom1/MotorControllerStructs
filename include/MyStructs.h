@@ -110,7 +110,6 @@ struct MotorData
     OdometryData odometryData;                    ///< Odometry data.
     Setpoint setpoint;                            ///< Desired setpoints.
     uint16_t pwmValue = 0;                        ///< Current PWM value.
-    uint8_t pwmUpdateFrequency = 50;              ///< PWM update frequency (Hz).
 };
 
 /**
@@ -123,6 +122,7 @@ struct ControllerProperties
     uint8_t numMotors = 2;                 ///< Number of motors controlled.
     uint16_t anglePIDFrequency = 30;       ///< Frequency for angle PID updates (Hz).
     uint16_t speedPIDFrequency = 30;       ///< Frequency for speed PID updates (Hz).
+    uint16_t pwmUpdateFrequency = 50;      ///< PWM update frequency (Hz).
     OdoBroadcastStatus odoBroadcastStatus; ///< Status of odometry broadcasting.
 };
 
