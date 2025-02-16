@@ -143,7 +143,7 @@ struct TaskHandles
 
 struct WheelTaskHandles
 {
-    TaskHandle_t *wheel_run_task_handles;
+    TaskHandle_t *wheel_run_task_handle;
 };
 
 
