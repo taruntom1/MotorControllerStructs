@@ -138,8 +138,14 @@ struct ControllerData
 
 struct TaskHandles
 {
+    WheelTaskHandles* wheel_task_handles;
+};
+
+struct WheelTaskHandles
+{
     TaskHandle_t *wheel_run_task_handles;
 };
+
 
 /** @} */
 #endif // MYSTRUCTS_H
