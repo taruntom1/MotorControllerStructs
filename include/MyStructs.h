@@ -68,7 +68,7 @@ struct MotorConnections
  */
 struct OdometryData
 {
-    float angle = 0; ///< Current angle in degrees.
+    int angle = 0; ///< Current angle in degrees.
     float rpm = 0;   ///< Current speed in RPM.
 };
 
@@ -78,7 +78,7 @@ struct OdometryData
  */
 struct Setpoint
 {
-    float angle = 0; ///< Desired angle in degrees.
+    int angle = 0; ///< Desired angle in degrees.
     float rpm = 0;   ///< Desired speed in RPM.
 };
 
