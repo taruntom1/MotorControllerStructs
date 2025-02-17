@@ -151,6 +151,7 @@ struct WheelTaskHandles
 {
     TaskHandle_t wheel_run_task_handle;
     TaskHandle_t PWMDirectControlTaskHandle;
+    TaskHandle_t OdoBroadcast;
 };
 
 struct TaskHandles
