@@ -112,16 +112,17 @@ enum ControlMode
  */
 struct MotorData
 {
-    uint8_t motorID = 0;                          ///< Unique identifier for the motor.
-    ControlMode controlMode = PWM_DIRECT_CONTROL; ///< Control mode for the motor.
-    PIDConstants anglePIDConstants;               ///< PID constants for angle control.
-    PIDConstants speedPIDConstants;               ///< PID constants for speed control.
-    PWMLimits pwmLimits;                          ///< PWM limits.
-    MotorConnections motorConnections;            ///< Hardware connections.
-    OdometryData odometryData;                    ///< Odometry data.
-    Setpoint setpoint;                            ///< Desired setpoints.
-    UpdateFrequenciesWheel updateFrequenciesWheel;    ///< Different update frequencies for wheel control.
-    uint16_t pwmValue = 0;                        ///< Current PWM value.
+    uint8_t motorID = 0;                           ///< Unique identifier for the motor.
+    ControlMode controlMode = PWM_DIRECT_CONTROL;  ///< Control mode for the motor.
+    PIDConstants anglePIDConstants;                ///< PID constants for angle control.
+    PIDConstants speedPIDConstants;                ///< PID constants for speed control.
+    PWMLimits pwmLimits;                           ///< PWM limits.
+    MotorConnections motorConnections;             ///< Hardware connections.
+    OdometryData odometryData;                     ///< Odometry data.
+    Setpoint setpoint;                             ///< Desired setpoints.
+    OdoBroadcastStatus odoBroadcastStatus;         ///< Status of odometry broadcasting.
+    UpdateFrequenciesWheel updateFrequenciesWheel; ///< Different update frequencies for wheel control.
+    uint16_t pwmValue = 0;                         ///< Current PWM value.
 };
 
 /**
@@ -130,11 +131,9 @@ struct MotorData
  */
 struct ControllerProperties
 {
-    bool run = false;                      ///< Indicates if the controller is active.
-    uint8_t numMotors = 2;                 ///< Number of motors controlled.
-    OdoBroadcastStatus odoBroadcastStatus; ///< Status of odometry broadcasting.
-    uint16_t odoBroadcastFrequency = 30;   ///< Frequency of odometry broadcasting.
-
+    bool run = false;                    ///< Indicates if the controller is active.
+    uint8_t numMotors = 2;               ///< Number of motors controlled.
+    uint16_t odoBroadcastFrequency = 30; ///< Frequency of odometry broadcasting.
 };
 
 /**
