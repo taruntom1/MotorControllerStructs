@@ -83,6 +83,17 @@ struct Setpoint
 };
 
 /**
+ * @struct UpdateFrequencyWheel
+ * @brief different loop update frequency for each wheel
+ */
+struct UpdateFrequenciesWheel
+{
+    uint16_t pwm = 50;      ///< PWM update frequency in Hz when on Direct PWM control.
+    uint16_t anglePID = 50; ///< Angle PID update frequency in Hz when on Position control mode.
+    uint16_t speedPID = 50; ///< Speed PID update frequency in Hz when on speed control mode.
+};
+
+/**
  * @brief ControlMode enum
  * @brief Enumerates different control modes for motor operation.
  */
@@ -109,6 +120,7 @@ struct MotorData
     MotorConnections motorConnections;            ///< Hardware connections.
     OdometryData odometryData;                    ///< Odometry data.
     Setpoint setpoint;                            ///< Desired setpoints.
+    UpdateFrequenciesWheel updateFrequenciesWheel;    ///< Different update frequencies for wheel control.
     uint16_t pwmValue = 0;                        ///< Current PWM value.
 };
 
@@ -120,10 +132,9 @@ struct ControllerProperties
 {
     bool run = false;                      ///< Indicates if the controller is active.
     uint8_t numMotors = 2;                 ///< Number of motors controlled.
-    uint16_t anglePIDFrequency = 30;       ///< Frequency for angle PID updates (Hz).
-    uint16_t speedPIDFrequency = 30;       ///< Frequency for speed PID updates (Hz).
-    uint16_t pwmUpdateFrequency = 50;      ///< PWM update frequency (Hz).
     OdoBroadcastStatus odoBroadcastStatus; ///< Status of odometry broadcasting.
+    uint16_t odoBroadcastFrequency = 30;   ///< Frequency of odometry broadcasting.
+
 };
 
 /**
