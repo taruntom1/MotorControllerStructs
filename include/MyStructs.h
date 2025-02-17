@@ -133,6 +133,7 @@ struct ControllerProperties
 {
     bool run = false;                    ///< Indicates if the controller is active.
     uint8_t numMotors = 2;               ///< Number of motors controlled.
+    OdoBroadcastStatus odoBroadcastStatus;         ///< Status of odometry broadcasting.
     uint16_t odoBroadcastFrequency = 30; ///< Frequency of odometry broadcasting.
 };
 
