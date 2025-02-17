@@ -147,6 +147,15 @@ struct TaskHandles
     WheelTaskHandles *wheel_task_handles;
 };
 
+/** @defgroup notifications Notifications
+ *  @brief Defines notification messages for the motor controller.
+ *  @{
+ */
 
-/** @} */
+/** Wheel run task notifications */
+#define CONTROL_MODE_UPDATE (1 << 0)
+#define ODO_BROADCAST_STATUS_UPDATE (1 << 1)
+
+/** @} */ // end of notifications
+
 #endif // MYSTRUCTS_H
