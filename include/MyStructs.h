@@ -69,7 +69,7 @@ struct MotorConnections
 struct OdometryData
 {
     int angle = 0; ///< Current angle in degrees.
-    float rpm = 0;   ///< Current speed in RPM.
+    float rpm = 0; ///< Current speed in RPM.
 };
 
 /**
@@ -79,7 +79,7 @@ struct OdometryData
 struct Setpoint
 {
     int angle = 0; ///< Desired angle in degrees.
-    float rpm = 0;   ///< Desired speed in RPM.
+    float rpm = 0; ///< Desired speed in RPM.
 };
 
 /**
@@ -126,15 +126,26 @@ struct MotorData
 };
 
 /**
+ * @struct LoopingFrequencys
+ * @brief Defines different update frequencies for various components.
+ */
+
+struct UpdateFrequencies
+{
+    uint16_t interfaceRun = 50;
+};
+
+/**
  * @struct ControllerProperties
  * @brief Defines properties of the motor controller.
  */
 struct ControllerProperties
 {
-    bool run = false;                    ///< Indicates if the controller is active.
-    uint8_t numMotors = 2;               ///< Number of motors controlled.
-    OdoBroadcastStatus odoBroadcastStatus;         ///< Status of odometry broadcasting.
-    uint16_t odoBroadcastFrequency = 30; ///< Frequency of odometry broadcasting.
+    bool run = false;                      ///< Indicates if the controller is active.
+    uint8_t numMotors = 2;                 ///< Number of motors controlled.
+    OdoBroadcastStatus odoBroadcastStatus; ///< Status of odometry broadcasting.
+    uint16_t odoBroadcastFrequency = 30;   ///< Frequency of odometry broadcasting.
+    UpdateFrequencies updateFrequencies;   ///< Different update frequencies for various components.
 };
 
 /**
@@ -158,8 +169,6 @@ struct InterfaceTaskHandles
 {
     TaskHandle_t Run;
 };
-
-
 
 struct TaskHandles
 {
