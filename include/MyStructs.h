@@ -154,8 +154,16 @@ struct WheelTaskHandles
     TaskHandle_t OdoBroadcast;
 };
 
+struct InterfaceTaskHandles
+{
+    TaskHandle_t Run;
+};
+
+
+
 struct TaskHandles
 {
+    InterfaceTaskHandles interface_task_handles;
     WheelTaskHandles *wheel_task_handles;
 };
 
