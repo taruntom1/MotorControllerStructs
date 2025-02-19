@@ -172,6 +172,7 @@ struct InterfaceTaskHandles
 
 struct TaskHandles
 {
+    TaskHandle_t main_task_handle;
     InterfaceTaskHandles interface_task_handles;
     WheelTaskHandles *wheel_task_handles;
 };
